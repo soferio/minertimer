@@ -4,6 +4,9 @@ Apple's screentime system is of no use in limiting childrens' use of Minecraft (
 
 This project aims to fix that problem. It is a zsh bash script developed by a parent developer (for Soferio Pty Limited) to allow other technically skilled parents to limit Minecraft java edition use by a child on a macos system.
 
+## Tested successfully
+The install, uninstall and active scripts have been tested and work at least on a Macbook running Sonoma 14.1.2.
+
 ## Overview of how it operates
 
  Once you follow the instructions below and install the script, it creates a background process which will stop minecraft (even mid-game) after 30 min of total use per day. A short sound will play when shutdown occurs. There is no warning prior to the 30min curfew. 
