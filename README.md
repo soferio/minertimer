@@ -1,6 +1,6 @@
 ### MINERTIMER SYSTEM FOR LIMITING CHILDRENS' USE OF MINECRAFT (JAVA Edition) ON MAC COMPUTERS
 
-Apple's screentime system is of no use in limiting childrens' use of Minecraft (Java edition) on Macintosh computers. You can read a discussion of this unresolved issue [![here]]( https://bugs.mojang.com/browse/MCL-14705?page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel&showAll=true).
+Apple's screentime system is of no use in limiting childrens' use of Minecraft (Java edition) on Macintosh computers. You can read a discussion of this unresolved issue [[here]]( https://bugs.mojang.com/browse/MCL-14705?page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel&showAll=true).
 
 This project aims to fix that problem. It is a zsh bash script developed by a parent developer (for Soferio Pty Limited) to allow other technically skilled parents to limit Minecraft java edition use by a child on a macos system.
 
