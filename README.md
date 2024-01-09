@@ -1,4 +1,4 @@
-### MINERTIMER SYSTEM FOR LIMITING CHILDRENS'S USE OF MINECRAFT ON MAC COMPUTERS
+### MINERTIMER SYSTEM FOR LIMITING CHILDRENS' USE OF MINECRAFT (JAVA Edition) ON MAC COMPUTERS
 
 Apple's screentime system is of no use in limiting childrens' use of Minecraft (Java edition) on Macintosh computers. You can read a discussion of this unresolved issue [![here]]( https://bugs.mojang.com/browse/MCL-14705?page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel&showAll=true).
 
@@ -29,4 +29,4 @@ To install the system copy all files to a single directory and then go to termin
 
 ### SUPPORT FURTHER DEVELOPMENT
 If our code helps you limit your child's Minecraft use to a reasonable amount, please donate here:
-[![Donate](https://img.shields.io/badge/Donate-Stripe-green.svg)](https://donate.stripe.com/14kaER0xs4L13cI000). Note that donating does not entitle anyone to any support services in relation to this program. This is entirely a hobby project.
+[![Donate](https://img.shields.io/badge/Donate-Stripe-green.svg)](https://donate.stripe.com/14kaER0xs4L13cI000). Note that donating does not entitle anyone to any support services in relation to this program. No support will be provided. This is entirely a hobby project and is provided for free and at users' own risk.
