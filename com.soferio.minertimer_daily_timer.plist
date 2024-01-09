@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+To REMOVE: launchctl unload ~/Library/LaunchDaemons/com.soferio.minertimer_daily_timer.plist
+To check if background process is running: launchctl list | grep com.soferio.minertimer_daily_timer
+Or can check using: launchctl print system/com.soferio.minertimer_daily_timer.plist
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.soferio.minertimer_daily_timer</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/Shared/minertimer/minertimer.sh</string>
+    </array>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <false/>
+</dict>
+</plist>
