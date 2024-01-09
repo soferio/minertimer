@@ -22,6 +22,12 @@ chmod 644 /Library/LaunchDaemons/com.soferio.minertimer_daily_timer.plist
 
 launchctl load -w /Library/LaunchDaemons/com.soferio.minertimer_daily_timer.plist
 
+# Step 4: Post Script report
+echo ""
+echo "Script has been run. Assuming there are no errors, to check if the minertimer ackground process is running type the following:"
+echo "sudo launchctl list | grep com.soferio.minertimer_daily_timer"
+echo "If you get a line of text commencing with a process number, it means the script is running."
+
 # NOTES POST INSTALLATION
 
 # TO STOP SCRIPT RUNNING, you use this command:

@@ -21,6 +21,12 @@ launchctl bootout system/com.soferio.minertimer_daily_timer
 # Step 4: Remove log file
 rm /var/lib/minertimer/minertimer_playtime.log
 
+# Step 5: Report
+echo ""
+echo "Script has been run. Assuming there are no errors, to check if the minertimer ackground process is running type the following:"
+echo "sudo launchctl list | grep com.soferio.minertimer_daily_timer"
+echo "If you get nothing, it means the background process is no longer running and minecraft is not limited."
+
 
 
 

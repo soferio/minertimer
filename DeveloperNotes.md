@@ -12,7 +12,7 @@
 ## Useful commands:
 
 # To check if script is running (good to check if it is running for other users)
-- sudo launchctl list | grep com.soferio.minertimer_daily_timer.plist
+- sudo launchctl list | grep com.soferio.minertimer_daily_timer
 
 # To stop script:
 - sudo launchctl unload /Library/LaunchAgents/com.soferio.minertimer_daily_timer.plist
