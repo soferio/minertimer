@@ -7,6 +7,8 @@
 
 # Time limit in seconds (e.g., 1800 for half an hour)
 TIME_LIMIT=1800
+DISPLAY_5_MIN_WARNING=true
+DISPLAY_1_MIN_WARNING=true
 
 # Directory and file to store total played time for the day
 LOG_DIRECTORY="/var/lib/minertimer"
@@ -39,7 +41,6 @@ fi
 while true; do
     
     MINECRAFT_PIDS=$(ps aux | grep -iww "[M]inecraft" | awk '{print $2}')
-
     # If Minecraft is running
     
     if [ -n "$MINECRAFT_PIDS" ]; then
@@ -48,7 +49,16 @@ while true; do
         if ((TOTAL_PLAYED_TIME >= TIME_LIMIT)); then
             echo $MINECRAFT_PIDS | xargs kill
             echo "Minecraft has been closed after reaching the daily time limit."
+            osascript -e 'display notification "Minecraft time expired" with title "Minecraft Closed"'
             afplay /System/Library/Sounds/Glass.aiff 
+        elif ((TOTAL_PLAYED_TIME >= TIME_LIMIT - 300)) && [ "$DISPLAY_5_MIN_WARNING" = true ]; then
+            osascript -e 'display notification "Minecraft will exit in 5 minutes" with title "Minecraft Time Expiring Soon"'
+            say "Minecraft time will expire in 5 minutes"
+            DISPLAY_5_MIN_WARNING=false
+        elif ((TOTAL_PLAYED_TIME >= TIME_LIMIT - 60)) && [ "$DISPLAY_1_MIN_WARNING" = true ]; then
+            osascript -e 'display notification "Minecraft will exit in 1 minute" with title "Minecraft Time Expiring"'
+            say "Minecraft time will expire in 1 minute"
+            DISPLAY_1_MIN_WARNING=false
         fi
         
         # Sleep, then increment the playtime
@@ -76,6 +86,8 @@ while true; do
     # If it's a new day, reset the playtime
     if [ "$LAST_PLAY_DATE" != "$CURRENT_DATE" ]; then
         TOTAL_PLAYED_TIME=0
+        DISPLAY_5_MIN_WARNING=true
+        DISPLAY_1_MIN_WARNING=true
         echo "$CURRENT_DATE" > "$LOG_FILE"
         echo "0" >> "$LOG_FILE"
         echo "RESET DATE - $CURRENT_DATE"
