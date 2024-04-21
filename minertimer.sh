@@ -7,6 +7,7 @@
 
 # Time limit in seconds (e.g., 1800 for half an hour)
 TIME_LIMIT=1800
+WEEKEND_TIME_LIMIT=3600
 DISPLAY_5_MIN_WARNING=true
 DISPLAY_1_MIN_WARNING=true
 
@@ -44,18 +45,21 @@ while true; do
     # If Minecraft is running
     
     if [ -n "$MINECRAFT_PIDS" ]; then
-        
+        current_limit=TIME_LIMIT
+        if [[ $(date +%u) -gt 5 ]]; then
+            current_limit=WEEKEND_TIME_LIMIT
+        fi
         # If the time limit has been reached, kill the Minecraft process
-        if ((TOTAL_PLAYED_TIME >= TIME_LIMIT)); then
+        if ((TOTAL_PLAYED_TIME >= current_limit)); then
             echo $MINECRAFT_PIDS | xargs kill
             echo "Minecraft has been closed after reaching the daily time limit."
             osascript -e 'display notification "Minecraft time expired" with title "Minecraft Closed"'
             afplay /System/Library/Sounds/Glass.aiff 
-        elif ((TOTAL_PLAYED_TIME >= TIME_LIMIT - 300)) && [ "$DISPLAY_5_MIN_WARNING" = true ]; then
+        elif ((TOTAL_PLAYED_TIME >= current_limit - 300)) && [ "$DISPLAY_5_MIN_WARNING" = true ]; then
             osascript -e 'display notification "Minecraft will exit in 5 minutes" with title "Minecraft Time Expiring Soon"'
             say "Minecraft time will expire in 5 minutes"
             DISPLAY_5_MIN_WARNING=false
-        elif ((TOTAL_PLAYED_TIME >= TIME_LIMIT - 60)) && [ "$DISPLAY_1_MIN_WARNING" = true ]; then
+        elif ((TOTAL_PLAYED_TIME >= current_limit - 60)) && [ "$DISPLAY_1_MIN_WARNING" = true ]; then
             osascript -e 'display notification "Minecraft will exit in 1 minute" with title "Minecraft Time Expiring"'
             say "Minecraft time will expire in 1 minute"
             DISPLAY_1_MIN_WARNING=false
