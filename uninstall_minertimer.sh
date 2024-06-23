@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 ###
-# Script to place the minertimer files where they belong and to give appropriate permissions etc
+# Script to remove the minertimer files 
 # The script needs to be run from an Administrator account with Administrator privileges using SUDO
 # Copyright Soferio Pty Ltd
 ###
