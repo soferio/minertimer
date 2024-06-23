@@ -1,7 +1,8 @@
 ### DEVELOPER NOTES
 
 # TODOS/Next steps
-- Maybe give warning before shutdown.
+- Maybe expand to cover other Java games?
+- Better packaging for less sophisticated users?
 
 ## List of directories and their purposes
 - Location of .sh script: /Users/Shared/minertimer
